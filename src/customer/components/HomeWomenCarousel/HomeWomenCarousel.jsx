@@ -22,7 +22,7 @@ const HomeWomenCarousel = ({sectionName}) => {
           disableButtonsControls
           autoPlay
           infinite
-          autoPlayInterval={3000}
+          autoPlayInterval={5000}
           responsive={responsive}
           disableDotsControls
         />

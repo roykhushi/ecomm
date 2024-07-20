@@ -4,10 +4,10 @@ import AliceCarousel from 'react-alice-carousel'
 import 'react-alice-carousel/lib/alice-carousel.css';
 
 const MainCarousel = () => {
-    const items = mainCarouselData.map((i)=> <img src={i.image} alt="lehenga" role='presentation' className='cursor-pointer' />)
+    const item = mainCarouselData.map((i)=> <img src={i.path} alt="banner" role='presentation' className='cursor-pointer' />)
   return (
     <AliceCarousel
-        items={items}
+        items={item}
         disableButtonsControls
         autoPlay
         infinite
