@@ -23,7 +23,7 @@ const ProductCard = ({ product }) => {
           </p>
         </div>
         <div className="flex items-center space-x-2">
-          <p className="font-semibold">MRP : Rs {product.price}</p>
+          <p className="font-semibold">MRP : ₹ {product.price}</p>
         </div>
       </div>
     </div>

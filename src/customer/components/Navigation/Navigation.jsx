@@ -294,7 +294,7 @@ export default function Navigation() {
             </div>
 
             <div className="border-t border-gray-200 px-4 py-6">
-              <a href="#" className="-m-2 flex items-center p-2">
+              {/* <a href="#" className="-m-2 flex items-center p-2">
                 <img
                   alt=""
                   src="https://tailwindui.com/img/flags/flag-canada.svg"
@@ -304,7 +304,7 @@ export default function Navigation() {
                   CAD
                 </span>
                 <span className="sr-only">, change currency</span>
-              </a>
+              </a> */}
             </div>
           </DialogPanel>
         </div>
@@ -312,7 +312,7 @@ export default function Navigation() {
 
       <header className="relative  z-[999] bg-white">
         <p className="flex h-10 items-center justify-center bg-yellow-500 px-4 text-sm font-medium text-white sm:px-6 lg:px-8">
-          Get free delivery on orders over Rs 1000
+          Get free delivery on orders over ₹ 1000
         </p>
 
         <nav
