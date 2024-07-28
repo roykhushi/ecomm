@@ -1,5 +1,4 @@
 "use client";
-
 import { useState } from "react";
 import {
   Dialog,
@@ -32,6 +31,8 @@ import {
   Radio,
   RadioGroup,
 } from "@mui/material";
+import { useLocation, useNavigate } from "react-router-dom";
+import { Navigate } from "react-router";
 
 const sortOptions = [
   { name: "Price: Low to High", href: "#", current: false },
@@ -88,6 +89,45 @@ function classNames(...classes) {
 
 export default function Product() {
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
+
+  //react-router-dom
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  //handling multi-filter
+  const handleFilter = (value , sectionId) => {
+    const searchParams = new URLSearchParams(location.search);
+    let filterValue = searchParams.getAll(sectionId); //values for eg if color is the section id then white,beige will be its value
+
+    if(filterValue.length > 0 && filterValue[0].split(",").includes(value)){
+      filterValue = filterValue[0].split(",").filter((item)=> item !== value);
+
+      if(filterValue.length === 0){
+        searchParams.delete(sectionId);
+      }
+    }
+    else{
+      filterValue.push(value);
+    }
+
+
+    if(filterValue.length > 0){
+      searchParams.set(sectionId,filterValue.join(","));
+    }
+    const query = searchParams.toString();
+    navigate({search : `?${query}`});
+  }
+
+
+  //single-filter
+  const handleRadioBtn = (sectionId,e) => {
+    const searchParams = new URLSearchParams(location.search);
+
+    searchParams.set(sectionId, e.target.value);
+
+    const query = searchParams.toString();
+    navigate({search : `?${query}`});
+  }
 
   return (
     <div className="bg-white">
@@ -291,6 +331,7 @@ export default function Product() {
                         {section.options.map((option, optionIdx) => (
                           <div key={option.value} className="flex items-center">
                             <input
+                            onChange={()=>handleFilter(option.value,section.id)}
                               defaultValue={option.value}
                               defaultChecked={option.checked}
                               id={`filter-${section.id}-${optionIdx}`}
@@ -350,7 +391,8 @@ export default function Product() {
                             {section.options.map((option, optionIdx) => (
                               <>
                                 <FormControlLabel
-                                  value={option.id}
+                                  onChange={(e)=>handleRadioBtn(section.id,e)}
+                                  value={option.value}
                                   control={<Radio />}
                                   label={option.label}
                                 />
