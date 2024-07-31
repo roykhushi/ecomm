@@ -6,6 +6,7 @@ import PaginationOutlined from './customer/components/Pagination/Pagination';
 import Product from './customer/components/Product/Product';
 import ProductDetails from './customer/components/ProductDetails/ProductDetails';
 import HomePage from './customer/pages/HomePage/HomePage';
+import Checkout from './customer/components/Checkout/Checkout';
 
 function App() {
   return (
@@ -16,7 +17,8 @@ function App() {
         {/* <Product /> */}
         {/* <PaginationOutlined /> */}
         {/* <ProductDetails /> */}
-        <Cart />
+        {/* <Cart /> */}
+        <Checkout />
       </div>
       <Footer />
     </div>

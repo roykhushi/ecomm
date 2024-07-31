@@ -1,0 +1,2 @@
+1. radio btn not working --> done 
+2. useLocation() hook giving null value in checkout.jsx

@@ -1,3 +1,5 @@
-1. radio btn not working --> done 
+
 2. include size chart on product's page
 3. can implement wishlist option
+4. can add product info(features) (tailwind)
+5. 

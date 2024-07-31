@@ -29,7 +29,7 @@ const Cart = () => {
             <hr className="mt-2" />
             <div className="flex justify-between pt-3 px-3  text-black">
               <span className="font-bold pb-4">Total Amount : </span>
-              <span>Rs 2050</span>
+              <span className="text-green-500">Rs 2050</span>
             </div>
           </div>
           <Button
