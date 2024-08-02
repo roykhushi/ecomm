@@ -19,11 +19,10 @@ const [activeStep, setActiveStep] = React.useState(0);
 // const location = useLocation();
 // console.log(location);
 // const search = location.pathname;
-// console.log(search);
-// const querySearch = new URLSearchParams(search);
+// const qs = new URLSearchParams(location.search);
 // console.log(querySearch);
-// const step = querySearch.get("step");
-// console.log(step);
+// const s = qs.get("step");
+// console.log(s);
 
 
 const handleNext = () => {

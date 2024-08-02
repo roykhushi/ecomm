@@ -7,6 +7,8 @@ import Product from './customer/components/Product/Product';
 import ProductDetails from './customer/components/ProductDetails/ProductDetails';
 import HomePage from './customer/pages/HomePage/HomePage';
 import Checkout from './customer/components/Checkout/Checkout';
+import Order from './customer/components/Order/Order';
+import OrderDetails from './customer/components/Order/OrderDetails';
 
 function App() {
   return (
@@ -18,7 +20,9 @@ function App() {
         {/* <PaginationOutlined /> */}
         {/* <ProductDetails /> */}
         {/* <Cart /> */}
-        <Checkout />
+        {/* <Checkout /> */}
+        {/* <Order /> */}
+        <OrderDetails />
       </div>
       <Footer />
     </div>
