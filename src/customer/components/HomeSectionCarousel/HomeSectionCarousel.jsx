@@ -1,6 +1,7 @@
 import React from "react";
 import HomeSectionCard from "../HomeSectionCard/HomeSectionCard";
 import AliceCarousel from "react-alice-carousel";
+import { productData } from "../Product/productData";
 
 const responsive = {
   0: { items: 1 },
@@ -8,7 +9,7 @@ const responsive = {
   1024: { items: 5.5 },
 };
 
-const items = [1, 1, 1, 1, 1].map((item) => <HomeSectionCard />);
+const items = productData.map((item) => <HomeSectionCard />);
 
 const HomeSectionCarousel = ({sectionName}) => {
   return (

@@ -22,8 +22,10 @@ import {
   ShoppingBagIcon,
   XMarkIcon,
 } from "@heroicons/react/24/outline";
-import { Avatar, Menu } from "@mui/material";
+import { Avatar } from "@mui/material";
 import { deepOrange } from "@mui/material/colors";
+import { useNavigate } from "react-router-dom";
+import BasicMenu from "./BasicMenu";
 
 const navigation = {
   categories: [
@@ -157,6 +159,12 @@ const navigation = {
 
 export default function Navigation() {
   const [open, setOpen] = useState(false);
+  const navigate = useNavigate();
+  
+  const handleCategoryClick = (category,section,item,close) => {
+    navigate(`/${category.id}/${section.id}/${item.id}`);
+    // close();
+  }
 
   return (
     <div className="bg-white">
@@ -333,9 +341,9 @@ export default function Navigation() {
 
               {/* Logo */}
               <div className="ml-4 flex lg:ml-0">
-                <a href="#">
-                  <span className="sr-only">Your Company</span>
-                  <img alt="" src="/UrbanCart.png" className="h-8 w-auto" />
+                <a>
+                  {/* <span className="sr-only">Your Company</span> */}
+                  <img alt="company-logo" src="/UrbanCart.png" className="h-8 w-auto cursor-pointer" onClick={()=>navigate("/")}/>
                 </a>
               </div>
 
@@ -408,12 +416,19 @@ export default function Navigation() {
                                     >
                                       {section.items.map((item) => (
                                         <li key={item.name} className="flex">
-                                          <a
-                                            href={item.href}
+                                          <p
+                                            onClick={() => 
+                                              handleCategoryClick(
+                                                category,
+                                                section,
+                                                item,
+                                                
+                                              )
+                                            }
                                             className="hover:text-gray-800"
                                           >
                                             {item.name}
-                                          </a>
+                                          </p>
                                         </li>
                                       ))}
                                     </ul>
@@ -444,7 +459,7 @@ export default function Navigation() {
                   {
                     <div>
                       <Avatar
-                      className="text-white"
+                      className= "mb-0"
                       aria-controls = {open ? "basic-menu" : undefined}
                       aria-haspopup = "true"
                       aria-expanded = {open ? "true" : undefined}
@@ -455,50 +470,15 @@ export default function Navigation() {
                         cursor: "pointer"
                       }}
                       >
-                        K
+                      <BasicMenu />
                       </Avatar>
-
-                      <Menu
-                      id="basic-menu"
-                      MenuListProps={{
-                        "aria-labelledby" : "basic-button"
-                      }}
-                      >
-
-                        <MenuItem onClick>
-                          Profile
-                        </MenuItem>
-
-                        <MenuItem>
-                          My Orders
-                        </MenuItem>
-
-                        <MenuItem>
-                          Logout
-                        </MenuItem>
-                        
-                      </Menu>
+                      
+                      
                     </div>
                   }
                 </div>
-
-                {/* <div className="hidden lg:ml-8 lg:flex">
-                  <a
-                    href="#"
-                    className="flex items-center text-gray-700 hover:text-gray-800"
-                  >
-                    <img
-                      alt=""
-                      src="https://tailwindui.com/img/flags/flag-canada.svg"
-                      className="block h-auto w-5 flex-shrink-0"
-                    />
-                    <span className="ml-3 block text-sm font-medium">CAD</span>
-                    <span className="sr-only">, change currency</span>
-                  </a>
-                </div> */}
-
-
-
+                
+                
                 {/* Search */}
                 <div className="flex lg:ml-6">
                   <a href="#" className="p-2 text-gray-400 hover:text-gray-500">

@@ -2,7 +2,6 @@ import React from "react";
 import AddressCard from "../AddressCard/AddressCard";
 import OrderTracker from "./OrderTracker";
 import { Box, Grid } from "@mui/material";
-import { deepPurple } from "@mui/material/colors";
 import StarBorderPurple500Icon from "@mui/icons-material/StarBorderPurple500";
 
 const OrderDetails = () => {

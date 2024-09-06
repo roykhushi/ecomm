@@ -10,7 +10,7 @@ const CartItem = () => {
         <div className="w-[15rem] h-[15rem] lg:w-[15rem] lg:h-[15rem] cursor-pointer">
           <img
             className="w-full h-full object-cover"
-            src="https://lp2.hm.com/hmgoepprod?set=source[/bc/fd/bcfd3f19e72773a735a3261355f490f6e2554238.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/style]"
+            src="https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/8c0455f0-10d1-4a08-a6fa-daf65dce2265/sportswear-essential-short-sleeve-polo-top-VQF6ZT.png"
             alt="hnm jeans"
           />
         </div>

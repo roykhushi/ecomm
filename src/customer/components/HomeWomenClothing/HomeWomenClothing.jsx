@@ -11,7 +11,7 @@ const HomeWomenClothing = () => {
         {/* content div */}
         <div className='p-4'>
             <h3 className='text-lg font-medium text-gray-900'>Women's T-shirt</h3>
-            <p className='mt-3 text-sm text-gray-500'> Women's Girlfriend T-shirt </p>
+            <p className='mt-3 text-sm text-gray-500'> Women's T-shirt </p>
         </div>
     </div>
   )

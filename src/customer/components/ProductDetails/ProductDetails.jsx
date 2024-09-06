@@ -7,6 +7,7 @@ import { Box, Button, Grid, LinearProgress, Rating } from "@mui/material";
 import ProductReviewCard from "./ProductReviewCard";
 import { productData } from "../Product/productData";
 import HomeSectionCard from "../HomeSectionCard/HomeSectionCard";
+import { useNavigate } from "react-router-dom";
 
 const product = {
   name: "Basic Tee 6-Pack",
@@ -18,13 +19,13 @@ const product = {
   ],
   images: [
     {
-      src: "https://tailwindui.com/img/ecommerce-images/product-page-02-secondary-product-shot.jpg",
+      src: "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/8c0455f0-10d1-4a08-a6fa-daf65dce2265/sportswear-essential-short-sleeve-polo-top-VQF6ZT.png",
       alt: "Two each of gray, white, and black shirts laying flat.",
     },
-    {
-      src: "https://tailwindui.com/img/ecommerce-images/product-page-02-tertiary-product-shot-01.jpg",
-      alt: "Model wearing plain black basic tee.",
-    },
+    // {
+    //   src: "https://tailwindui.com/img/ecommerce-images/product-page-02-tertiary-product-shot-01.jpg",
+    //   alt: "Model wearing plain black basic tee.",
+    // },
     {
       src: "https://tailwindui.com/img/ecommerce-images/product-page-02-tertiary-product-shot-02.jpg",
       alt: "Model wearing plain gray basic tee.",
@@ -66,6 +67,10 @@ function classNames(...classes) {
 export default function ProductDetails() {
   const [selectedColor, setSelectedColor] = useState(product.colors[0]);
   const [selectedSize, setSelectedSize] = useState(product.sizes[2]);
+  const navigate = useNavigate();
+  const handleAddToCart = () => {
+      navigate("/cart");
+  }
 
   return (
     <div className="bg-white">
@@ -229,6 +234,7 @@ export default function ProductDetails() {
                 </div>
 
                 <Button
+                  onClick={handleAddToCart}
                   variant="contained"
                   sx={{ px: "2rem", py: "1rem", mt: "20px" }}
                   type="submit"

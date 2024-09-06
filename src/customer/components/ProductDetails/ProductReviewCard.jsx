@@ -20,7 +20,7 @@ const ProductReviewCard = () => {
           <div className="space-y-2">
             <div>
               <p className="font-semibold text-lg">Khushi</p>
-              <p className="opacity-70">July,2024</p>
+              <p className="opacity-70">September,2024</p>
             </div>
           </div>
 
